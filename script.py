@@ -10,7 +10,7 @@ import os
 SERVICE_ACCOUNT_FILE = 'service_account_key.json'
 
 # 2. Update this to the name of your text file.
-INPUT_FILE_NAME = 'your_questions_file.txt'
+INPUT_FILE_NAME = 'questions_file.txt'
 
 # 3. Update this to the name of the Firestore Collection where you want to store the questions.
 COLLECTION_NAME = 'questions'
