@@ -29,9 +29,9 @@ def upload_questions_to_firestore():
     try:
         cred = credentials.Certificate(SERVICE_ACCOUNT_FILE)
         firebase_admin.initialize_app(cred)
-        print("✅ Firebase Admin SDK initialized successfully.")
+        print("Firebase Admin SDK initialized successfully.")
     except Exception as e:
-        print(f"❌ Error initializing Firebase: {e}")
+        print(f"Error initializing Firebase: {e}")
         return
 
     db = firestore.client()
@@ -61,12 +61,12 @@ def upload_questions_to_firestore():
                         print(f"   ... Uploaded {upload_count} questions so far.")
 
         print("---")
-        print(f"🎉 Successfully uploaded {upload_count} questions to Firestore collection '{COLLECTION_NAME}'.")
+        print(f"Successfully uploaded {upload_count} questions to Firestore collection '{COLLECTION_NAME}'.")
 
     except FileNotFoundError:
-        print(f"❌ ERROR: Input file not found at '{INPUT_FILE_NAME}'. Please check the file name.")
+        print(f"ERROR: Input file not found at '{INPUT_FILE_NAME}'. Please check the file name.")
     except Exception as e:
-        print(f"❌ An unexpected error occurred during upload: {e}")
+        print(f"An unexpected error occurred during upload: {e}")
 
 if __name__ == "__main__":
     upload_questions_to_firestore()
